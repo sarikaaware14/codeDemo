@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ECharts Bar Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="bar-chart" style="width: 1000px; height: 400px;"></div>
+
+    <script>
+        var chartElement = document.getElementById('bar-chart');
+        var myChart = echarts.init(chartElement);
+
+        var data = {
+            categories: ['Catdddddddddddddddddddddddddddddegory 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5','Catdddddddddddddddddddddddddddddegory 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'],
+            values: [120, 200, 150, 80, 70,120, 200, 150, 80, 70]
+        };
+
+
+        var option = {
+           title:{
+            show:true,
+            trim: true, 
+          },
+
+          //vertical scroll
+          // legend:{
+          //   show:true,
+          //   orient: 'vertical', 
+          //   right: 10,
+          //   top: 20,
+          //   bottom: 20,
+          //   type: 'scroll'
+          // },
+
+          legend:{
+            show:true,
+            orient: 'horizontal', 
+            right: 10,
+            // top: 20,
+            // bottom: 20,
+            type: 'scroll',
+            x: 'center', 
+            y: 'bottom', 
+            borderRadius:15,
+            pageTextStyle:{
+              fontStyle:'italic'
+            }
+          },
+
+          tooltip:{
+            show:true,
+            position:"top"
+          },
+            // title: {
+            //     text: 'Multi-Dataset Bar Chart Example'
+            // },
+            xAxis: {
+                type: 'category',
+                data: ['CategoryCategory 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'],
+                axisLabel: {
+                    show: true, 
+                    color: 'black', 
+                    trim: true,
+                    fontSize: 12, 
+                    formatter: function (values) {
+                        if (values.length > 10) {
+                            return values.slice(0, 8) + '...';
+                        } else {
+                            return values;
+                        }
+                    }
+                },
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name: 'Dataset A',
+                    type: 'bar',
+                    data: [120, 86, 36, 80, 70]
+                },
+                {
+                    name: 'Dataset B',
+                    type: 'bar',
+                    data: [90, 47, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset C',
+                    type: 'bar',
+                    data: [90, 160, 53, 60, 50]
+                },
+                {
+                    name: 'Dataset D',
+                    type: 'bar',
+                    data: [90, 75, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset E',
+                    type: 'bar',
+                    data: [90, 80, 48, 60, 50]
+                },
+                {
+                    name: 'Dataset F',
+                    type: 'bar',
+                    data: [90, 160, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset G',
+                    type: 'bar',
+                    data: [90, 160, 60, 60, 50]
+                },
+                {
+                    name: 'Dataset H',
+                    type: 'bar',
+                    data: [90, 16, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset I',
+                    type: 'bar',
+                    data: [90, 160, 10, 60, 50]
+                },
+                {
+                    name: 'Dataset J',
+                    type: 'bar',
+                    data: [20, 50, 80, 60, 50]
+                },
+                {
+                    name: 'Dataset K',
+                    type: 'bar',
+                    data: [90, 160, 30, 60, 50]
+                },{
+                    name: 'Dataset L',
+                    type: 'bar',
+                    data: [90, 8, 100, 60, 50]
+                },{
+                    name: 'Dataset M',
+                    type: 'bar',
+                    data: [90, 50, 100, 60, 50]
+                },{
+                    name: 'Dataset N',
+                    type: 'bar',
+                    data: [90, 60, 70, 60, 50]
+                },{
+                    name: 'Dataset O',
+                    type: 'bar',
+                    data: [90, 50, 89, 60, 50]
+                },
+                {
+                    name: 'Dataset p',
+                    type: 'bar',
+                    data: [120, 86, 36, 80, 70]
+                },
+                {
+                    name: 'Dataset q',
+                    type: 'bar',
+                    data: [90, 47, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset s',
+                    type: 'bar',
+                    data: [90, 160, 53, 60, 50]
+                },
+                {
+                    name: 'Dataset t',
+                    type: 'bar',
+                    data: [90, 75, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset u',
+                    type: 'bar',
+                    data: [120, 86, 36, 80, 70]
+                },
+                {
+                    name: 'Dataset v',
+                    type: 'bar',
+                    data: [90, 47, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset w',
+                    type: 'bar',
+                    data: [90, 160, 53, 60, 50]
+                },
+                {
+                    name: 'Dataset x',
+                    type: 'bar',
+                    data: [90, 75, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset y',
+                    type: 'bar',
+                    data: [120, 86, 36, 80, 70]
+                },
+                {
+                    name: 'Dataset z',
+                    type: 'bar',
+                    data: [90, 47, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset Cc',
+                    type: 'bar',
+                    data: [90, 160, 53, 60, 50]
+                },
+                {
+                    name: 'Dataset Dd',
+                    type: 'bar',
+                    data: [90, 75, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset Aa',
+                    type: 'bar',
+                    data: [120, 86, 36, 80, 70]
+                },
+                {
+                    name: 'Dataset Ba',
+                    type: 'bar',
+                    data: [90, 47, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset Ca',
+                    type: 'bar',
+                    data: [90, 160, 53, 60, 50]
+                },
+                {
+                    name: 'Dataset Da',
+                    type: 'bar',
+                    data: [90, 75, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset Ec',
+                    type: 'bar',
+                    data: [90, 80, 48, 60, 50]
+                },
+                {
+                    name: 'Dataset F',
+                    type: 'bar',
+                    data: [90, 160, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset Gd',
+                    type: 'bar',
+                    data: [90, 160, 60, 60, 50]
+                },
+                {
+                    name: 'Dataset Hd',
+                    type: 'bar',
+                    data: [90, 16, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset Id',
+                    type: 'bar',
+                    data: [90, 160, 10, 60, 50]
+                },
+                {
+                    name: 'Dataset Jd',
+                    type: 'bar',
+                    data: [20, 50, 80, 60, 50]
+                },
+                {
+                    name: 'Dataset Kd',
+                    type: 'bar',
+                    data: [90, 160, 30, 60, 50]
+                },{
+                    name: 'Dataset Ld',
+                    type: 'bar',
+                    data: [90, 8, 100, 60, 50]
+                },{
+                    name: 'Dataset Md',
+                    type: 'bar',
+                    data: [90, 50, 100, 60, 50]
+                },{
+                    name: 'Dataset Nd',
+                    type: 'bar',
+                    data: [90, 60, 70, 60, 50]
+                },{
+                    name: 'Dataset Od',
+                    type: 'bar',
+                    data: [90, 50, 89, 60, 50]
+                },
+                {
+                    name: 'Dataset pd',
+                    type: 'bar',
+                    data: [120, 86, 36, 80, 70]
+                },
+                {
+                    name: 'Dataset qd',
+                    type: 'bar',
+                    data: [90, 47, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset sd',
+                    type: 'bar',
+                    data: [90, 160, 53, 60, 50]
+                },
+                {
+                    name: 'Dataset td',
+                    type: 'bar',
+                    data: [90, 75, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset ud',
+                    type: 'bar',
+                    data: [120, 86, 36, 80, 70]
+                },
+                {
+                    name: 'Dataset vd',
+                    type: 'bar',
+                    data: [90, 47, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset wd',
+                    type: 'bar',
+                    data: [90, 160, 53, 60, 50]
+                },
+                {
+                    name: 'Dataset xd',
+                    type: 'bar',
+                    data: [90, 75, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset yd',
+                    type: 'bar',
+                    data: [120, 86, 36, 80, 70]
+                },
+                {
+                    name: 'Dataset zd',
+                    type: 'bar',
+                    data: [90, 47, 100, 60, 50]
+                },
+                {
+                    name: 'Dataset Cc',
+                    type: 'bar',
+                    data: [90, 160, 53, 60, 50]
+                },
+                {
+                    name: 'Dataset Ddd',
+                    type: 'bar',
+                    data: [90, 75, 100, 60, 50]
+                }
+
+            ]
+        };
+        // var option = {
+        //   title:{
+        //     show:true,
+        //     trim: true, 
+        //   },
+        //   tooltip:{
+        //     show:true
+        //   },
+        //     title: {
+        //         text: 'Single Dataset Bar Chart Example'
+        //     },
+        //     xAxis: {
+        //         type: 'category',
+        //         data: data.categories,
+        //          nameLocation :'end',
+        //          axisLabel: {
+        //             show: true, 
+        //             color: 'red', 
+        //             trim: true,
+        //             fontSize: 12, 
+        //             formatter: function (values) {
+        //                 if (values.length > 10) {
+        //                     return values.slice(0, 8) + '...';
+        //                 } else {
+        //                     return values;
+        //                 }
+        //             }
+        //         },
+        //     },
+        //     yAxis: {
+        //         type: 'value'
+        //     },
+        //     series: [{
+        //         data: data.values,
+        //         type: 'bar',
+        //         label: {
+        //           show: true,
+        //           position: 'top',
+        //           color: "black",
+        //           fontSize:12,
+        //       },
+        //     }]
+        // };
+
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
