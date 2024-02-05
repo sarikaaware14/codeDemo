@@ -1,0 +1,85 @@
+.myForm{
+    width: 30%;
+}
+.myController{
+    text-align: center;
+}
+.btn-primary{
+    text-align: center;
+}
+.form-control{
+    width: 80%;
+}
+.form-group{
+    margin-left: 70px;
+    padding: 5px;
+}
+.buttons{
+    margin-left: 30px;
+}
+.error{
+    color: red;
+}
+.about-five-content .about-five-tab nav button.active {
+    background-color: #155bd5;
+    color: white
+}
+
+.about-five-content .about-five-tab nav .nav-tabs {
+    border: none;
+}
+.about-five-content .about-five-tab .tab-content {
+    border: none;
+    padding-top: 30px;
+}
+
+.about-five-content .about-five-tab nav .nav-tabs {
+    border: none;
+}
+.about-five-content .about-five-tab {
+    margin-top: 40px;
+}
+.about-five-content .small-title {
+    position: relative;
+    padding-left: 30px;
+}
+.about-five-content .about-five-tab nav {
+    border: none;
+    background-color: #efefef;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.text-lg {
+    font-size: 1.15em;
+    line-height: 1.5;
+}
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+p {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6d6d6d;
+    margin: 0;
+}
+.about-five-content .about-five-tab .tab-content p {
+    margin-bottom: 20px;
+}
+.about-five-content .about-five-tab nav button {
+    border: none;
+    color: #2d2d2d;
+    font-weight: 600;
+    padding: 0;
+    margin-right: 20px;
+    position: relative;
+    background-color: white;
+    padding: 10px 18px;
+    border-radius: 4px;
+    text-transform: capitalize;
+}
