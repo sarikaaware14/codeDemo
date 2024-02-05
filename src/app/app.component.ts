@@ -45,7 +45,7 @@ export class AppComponent implements OnInit{
   public message1: any = [];
   
   items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
-
+  title: string = "test";
   ngOnInit(): void{
     this.message = this.messageService.sendMessage("test");
     
