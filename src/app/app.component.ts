@@ -29,7 +29,7 @@ export class AppComponent implements OnInit{
   public pasword : string = '';
   public password : string = '';
   public num2 : string = ''; 
-  public result:number = 0;
+  public result : number = 0;
   public jsonArray: any[] = [];
   public jsonArray1: any[] = [];
   public getJsonValue: any;
@@ -57,11 +57,20 @@ export class AppComponent implements OnInit{
     this.postMethod();
     this.getMethod1();
     this.getDataById();
+
+    //random number creation start
+    const min = 1;
+    const max = 100;
+    const randomNum = this.getRandomNumber(min, max);
+    console.log("fsfsdfsd=",randomNum);
+    //ends
+
  }
 
  constructor(public http: HttpClient,public messageService: MessageService ){}
 
  public getMethod(){
+  
     this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((data) =>{
       this.getJsonValue = data;
       for (const key in this.getJsonValue) {
@@ -167,6 +176,7 @@ export class AppComponent implements OnInit{
           this.isButtonDisabled = false;
         } 
   }
+  
   onClick(value: any){
     
     this.resetData1 = document.getElementById('myForm');
@@ -189,5 +199,11 @@ export class AppComponent implements OnInit{
     closeModel.style.display = 'none'
    }
  }
+
+ public getRandomNumber(min: number, max: number) {
+  const randomFloat = Math.random();
+  const randomNumber = Math.floor(randomFloat * (max - min + 1)) + min;
+  return randomNumber;
+}
 
 }
