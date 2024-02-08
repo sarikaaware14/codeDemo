@@ -46,6 +46,7 @@ export class AppComponent implements OnInit{
   
   items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
   title: string = "test";
+
   ngOnInit(): void{
     this.message = this.messageService.sendMessage("test");
     
@@ -62,7 +63,7 @@ export class AppComponent implements OnInit{
     const min = 1;
     const max = 100;
     const randomNum = this.getRandomNumber(min, max);
-    console.log("fsfsdfsd=",randomNum);
+    // console.log("fsfsdfsd=",randomNum);
     //ends
 
  }
@@ -103,6 +104,7 @@ export class AppComponent implements OnInit{
       console.log("id data=",this.getJsonValue2);
     })
   }
+
   public postMethod(){
     const header = new HttpHeaders({
       contentType: "application/json"
@@ -135,7 +137,6 @@ export class AppComponent implements OnInit{
   errorData1: boolean = false;
   success: boolean = false;
   isButtonDisabled: boolean = false; 
-
 
   onSubmit(){
     setTimeout(() => {
@@ -176,7 +177,7 @@ export class AppComponent implements OnInit{
           this.isButtonDisabled = false;
         } 
   }
-  
+
   onClick(value: any){
     
     this.resetData1 = document.getElementById('myForm');
@@ -207,3 +208,6 @@ export class AppComponent implements OnInit{
 }
 
 }
+//interview questions link
+//https://github.com/sudheerj/angular-interview-questions?tab=readme-ov-file#table-of-contents
+// https://blogs.gyanrays.com/angular/angular-routing-multiple-pages-on-click
