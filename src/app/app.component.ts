@@ -8,13 +8,15 @@ import { style } from '@angular/animations';
 import { Block } from '@angular/compiler';
 import { HomeComponent } from './home/home.component';
 import { MessageService } from './messageService';
+import { RouterOutlet ,RouterLink} from '@angular/router';
+import { Router,RouterModule } from '@angular/router'; 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [CommonModule,HttpClientModule,FormsModule,HomeComponent],
+  imports: [CommonModule,HttpClientModule,FormsModule,HomeComponent,RouterLink,RouterOutlet,RouterModule],
   providers: [
     MessageService,
   ],
@@ -68,7 +70,7 @@ export class AppComponent implements OnInit{
 
  }
 
- constructor(public http: HttpClient,public messageService: MessageService ){}
+ constructor(public http: HttpClient,public messageService: MessageService,public router: Router ){}
 
  public getMethod(){
   
