@@ -290,8 +290,13 @@ ng generate service housing --skip-tests -->
     </div>
 </section>
 
-<nav style="margin-top: 20px;margin-bottom: 20px;">
-  <a routerLink="home">home </a>
-  <a routerLink="about" >about </a> 
-</nav>
+
+
+  <nav>
+    <ul>
+      <li><a routerLink="home" name="page1" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="about" name="page2" routerLinkActive="active">About</a></li>
+    </ul>
+    
+  </nav>
   <router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+.counter-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .counter-container button {
+    margin: 0 50px; 
+  }
+  img{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+  }

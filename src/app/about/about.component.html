@@ -1,12 +1,38 @@
-<div class="content">
-  <h2> About Me </h2>
-  <p>
-    I'm John, and I love taking photos. I have been taking photos for over 25 years. Visit me on my social media:
-  </p>
-  <a href=""> Facebook </a> 
- 
-  <a href=""> LinkedIn </a> 
- 
-  <a href=""> Instagram </a> 
- 
- </div>
+
+
+
+<div *ngFor="let product of products" class="counter-container">
+  <img src="https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg">
+  <p>{{ product.name }}</p>
+  <button (click)="updateQuantityAndAmount(product.id, product.quantity - 1)">-</button>
+  <span>{{ product.quantity }}</span>
+  <button (click)="updateQuantityAndAmount(product.id, product.quantity + 1)">+</button>
+  <span>Rs.{{ product.amount }}</span>
+  
+</div>
+
+
+
+
+
+<!-- <div class="counter-container">
+  <img src="https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg">
+  <button type="text" class="btn btn-primary" (click)="onDecrement()">-</button>
+  <p>{{ increment }}</p>
+  
+  <button type="text" class="btn btn-primary" (click)="onIncrement()">+</button>
+  
+  <p>Rs.{{ price1 }}</p>
+</div>
+<p>-----------------------------------------------------------------------------------------------------</p>
+
+<div *ngFor="let item of products" class="counter-container">
+  <img src="https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg">
+  <p>{{ item.name }}</p>
+  <button type="text" class="btn btn-primary" (click)="onDecrement()">-</button>
+  <p>{{ increment }}</p>
+  
+  <button type="text" class="btn btn-primary" (click)="onIncrement()">+</button>
+  
+  <p>Rs.{{ price1 }}</p>
+</div> -->
