@@ -7,6 +7,7 @@ interface Product {
   quantity: number;
   unitPrice: number;
   amount: number;
+  simgae: string
 }
 @Component({
   selector: 'app-about',
@@ -18,20 +19,31 @@ interface Product {
 export class AboutComponent {
 
   products: Product[] = [
-    { id: 1, name: 'Product 1', quantity: 1, unitPrice: 120, amount: 120 },
-    { id: 2, name: 'Product 2', quantity: 1, unitPrice: 150, amount: 150 },
-    { id: 3, name: 'Product 3', quantity: 1, unitPrice: 250, amount: 250 }
+    { id: 1, name: 'Product 1', quantity: 1, unitPrice: 1350, amount: 1350, simgae: './assets/images/shoes.jpeg' },
+    { id: 2, name: 'Product 2', quantity: 1, unitPrice: 1500, amount: 1500, simgae: './assets/images/shoes1.jpeg' },
+    { id: 3, name: 'Product 3', quantity: 1, unitPrice: 850, amount: 850, simgae: './assets/images/shoes2.jpeg' }
   ];
   
   updateQuantityAndAmount(id: number, newQuantity: number): void {
     const product = this.products.find(p => p.id === id);
     if (product && newQuantity >= 0) {
-      product.quantity = newQuantity;
-      product.amount = product.unitPrice * newQuantity;
+        product.quantity = newQuantity;
+        product.amount = product.unitPrice * newQuantity;
+        product.simgae = product.simgae;
+
+        this.totalAmount = this.calculateTotalAmount();
     }
-  }
+    // return 0; // Return a default value if the product is not found or newQuantity is negative
+    }
 
-
+    calculateTotalAmount(): number {
+      let totalAmount = 0;
+      for (const product of this.products) {
+          totalAmount += product.amount;
+      }
+      return totalAmount;
+    }
+      totalAmount: number= 0;
 
 
    // products: { image: string, name: string, amount: number, quantity: number }[] = [

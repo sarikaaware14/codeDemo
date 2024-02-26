@@ -2,15 +2,18 @@
 
 
 <div *ngFor="let product of products" class="counter-container">
-  <img src="https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg">
+  <img src="{{ product.simgae }}">
   <p>{{ product.name }}</p>
   <button (click)="updateQuantityAndAmount(product.id, product.quantity - 1)">-</button>
   <span>{{ product.quantity }}</span>
   <button (click)="updateQuantityAndAmount(product.id, product.quantity + 1)">+</button>
-  <span>Rs.{{ product.amount }}</span>
+  <span>Rs.{{ product.amount }}</span><br>
+  
   
 </div>
-
+<div>
+  <h3>Total Amount: Rs.{{ totalAmount }}</h3>
+</div>
 
 
 
