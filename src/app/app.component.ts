@@ -3,20 +3,21 @@ import { Component ,OnInit} from '@angular/core';
 import { NgModule } from '@angular/core';
 import { FormBuilder, FormsModule } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import {CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { style } from '@angular/animations';
 import { Block } from '@angular/compiler';
 import { HomeComponent } from './home/home.component';
 import { MessageService } from './messageService';
 import { RouterOutlet ,RouterLink} from '@angular/router';
 import { Router,RouterModule } from '@angular/router'; 
+import { ReversePipe } from './reverse.pipe';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [CommonModule,HttpClientModule,FormsModule,HomeComponent,RouterLink,RouterOutlet,RouterModule],
+  imports: [CommonModule,HttpClientModule,FormsModule,HomeComponent,RouterLink,RouterOutlet,RouterModule,ReversePipe],
   providers: [
     MessageService,
   ],
@@ -45,6 +46,7 @@ export class AppComponent implements OnInit{
   public resetData1:any;
   public message: string = "";
   public message1: any = [];
+  public message2: any = [];
   
   items: string[] = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
   title: string = "test";
@@ -55,6 +57,11 @@ export class AppComponent implements OnInit{
     this.messageService.getMethod().subscribe((result) => {
       this.message1 = result;
     });
+
+    this.messageService.postMethod(2).subscribe((result) =>{
+      this.message2 = result;
+    })
+
 
     this.getMethod();
     this.postMethod();

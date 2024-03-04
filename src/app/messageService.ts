@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -7,8 +7,6 @@ import { Observable } from 'rxjs';
     providedIn: 'root',
   })
 export class MessageService {
-    public getJsonValue: any;
-    public jsonArray: any[] = [];
 
    constructor(public http: HttpClient) {}
    
@@ -20,6 +18,15 @@ export class MessageService {
    getMethod(): Observable<any[]> {
       return this.http.get<any[]>(this.apiUrl);
     }
-
-  
+    
+    private apiurl1 = 'https://jsonplaceholder.typicode.com/posts';
+    postMethod(data:any): Observable<any[]>{
+      const header = new HttpHeaders({
+        contentType: "application/json"
+      })
+      let body ={
+        userId :10
+    };
+      return this.http.post<any[]>(this.apiurl1, body, { headers: header });
+    }
 }

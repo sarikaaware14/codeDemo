@@ -7,15 +7,11 @@
   <button (click)="updateQuantityAndAmount(product.id, product.quantity - 1)">-</button>
   <span>{{ product.quantity }}</span>
   <button (click)="updateQuantityAndAmount(product.id, product.quantity + 1)">+</button>
-  <span>Rs.{{ product.amount }}</span><br>
-  
-  
+  <span>Rs.{{ product.amount }}</span><br>  
 </div>
 <div>
   <h3>Total Amount: Rs.{{ totalAmount }}</h3>
 </div>
-
-
 
 
 <!-- <div class="counter-container">
